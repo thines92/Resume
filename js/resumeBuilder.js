@@ -1,8 +1,8 @@
 
 
 	var bio = {
-		"bio" :[
-		"name" : "Tyler",
+
+		"name" : "Tyler Hines",
 		"role" : "Web Developer",
 		"contacts" : {
 			"email" : "tylerhines1992@gmail.com",
@@ -16,7 +16,7 @@
 		"skills" : [
 		"awesomeness", "delivering things", "cryogenic sleep", "saving the universe"
 		]
-			]
+
 	}
 
 	var work = {
@@ -95,13 +95,36 @@
 	]
 }
 
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedRole);
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	$("#header").prepend(formattedName);
 
 
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#topContacts").append(formattedMobile);
+
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	$("#topContacts").append(formattedEmail);
+
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+	$("#topContacts").append(formattedGithub);
+
+	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+	$("#topContacts").append(formattedTwitter);
+
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	$("#topContacts").append(formattedLocation);
+
+	var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+	$("#header").append(formattedBioPic);
+
+	var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").append(formattedWelcomeMessage);
 
 	if(bio.skills.length > 0) {
 
 		$("#header").append(HTMLskillsStart);
-
 
 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
 	$("#skills").append(formattedSkill);
@@ -113,29 +136,6 @@
 	$("#skills").append(formattedSkill);
 }
 
-	/*var formattedName = HTMLheaderName.replace("%data%", bio.name);
-	$("#header").append(formattedName);*/
-
-/*bio.display = function() {
-	for (bioInfo in bio.bio) {
-		$("#topContacts").append(HTMLheaderName);
-
-
-
-			var formattedName = HTMLheaderName.replace("%data%", bio.bio[bioInfo].name);
-			var formattedRole = HTMLheaderRole.replace("%data%", bio.bio[bioInfo].role);
-			var formattedProjectInformation = formattedName + formattedRole;
-			$(".project-entry:last").append(formattedProjectInformation);
-
-			var formattedDescription = HTMLprojectDescription.replace("%data%", projects.classes[classInfo].description);
-			$(".project-entry:last").append(formattedDescription);
-
-			var formattedImage = HTMLprojectImage.replace("%data%", projects.classes[classInfo].image);
-			$(".project-entry:last").append(formattedImage);
-
-		}
-	}
-	projects.display();*/
 
 	function displayWork() {
 	for (job in work.jobs) {

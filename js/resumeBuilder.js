@@ -9,7 +9,7 @@
 			"mobile" : "508-322-8336",
 			"github" : "thines92",
 			"twitter" : "@thines92",
-			"location" : "San Francisco"
+			"location" : "Pembroke, Massachusetts"
 		},
 		"bioPic" : "images/tylerpic.jpg",
 		"welcomeMessage" : "Welcome to my resume!",
@@ -25,21 +25,21 @@
 			"title" : "Sales Consultant",
 			"employer" : "AT&T",
 			"dates" : "March, 2012 - Current",
-			"city" : "Norwell",
+			"location" : "Norwell, Massachusetts",
 			"description" : "Discover customers needs and suggest appropriate products."
 		},
 		{
 			"title" : "Sales",
 			"employer" : "Target Mobile",
 			"dates" : "September, 2011 - March, 2012",
-			"city" : "Kingston",
+			"location" : "Kingston, Massachusetts",
 			"description" : "Discover customers needs and suggest appropriate products."
 		},
 		{
 			"title" : "Sales",
 			"employer" : "Sears",
 			"dates" : "October, 2009 - October, 2011",
-			"city" : "Kingston",
+			"location" : "Kingston, Massachusetts",
 			"description" : "Educate customers on Tools, Home and Garden and Fitness products and suggest the appropriate products."
 		}
 		]
@@ -52,7 +52,7 @@
 		{
 			"school" : "Dimond High School",
 			"degree" : "N/A",
-			"schoolLocation" : "Anchorage, Alaska",
+			"location" : "Anchorage, Alaska",
 			"dates" : "2008 - 2009",
 			"major" : "N/A",
 			"graduation" : "N/A"
@@ -61,7 +61,7 @@
 	{
 		"school" : "Silver Lake Regional High School",
 		"degree" : "N/A",
-		"schoolLocation" : "Kingston, MA",
+		"location" : "Kingston, MA",
 		"dates" : "2009-2011",
 		"major" : "N/A",
 		"graduation" : "2011"
@@ -86,10 +86,10 @@
 	var projects = {
 		"classes" : [
 		{
-			"title" : "Sample Project 1",
+			"title" : "Website Mockup",
 			"dates" : "2014",
-			"description" : "Sample Project 1",
-			"image" : "Blank Image"
+			"description" : "For a project, we were asked to recreate a website from scratch.",
+			"image" : "images/project1.png"
 
 		}
 	]
@@ -156,6 +156,10 @@
 	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 	$(".work-entry:last").append(
 		formattedDescription);
+
+	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	$(".work-entry:last").append(
+		formattedLocation);
 	}
 	}
 	displayWork();
@@ -173,8 +177,8 @@
 		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[schoolInfo].dates);
 		$(".education-entry:last").append(formattedSchoolDates);
 
-		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[schoolInfo].location);
-		$(".education-entry:last").append(formattedSchoolLocation);
+		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[schoolInfo].location);
+		$(".education-entry:last").append(formattedLocation);
 
 		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[schoolInfo].major);
 		$(".education-entry:last").append(formattedMajor);
@@ -236,4 +240,6 @@ education.display();
 		return name[0] + " " + name[1];
 	}
 */
+
+$("#mapDiv").append(googleMap);
 
